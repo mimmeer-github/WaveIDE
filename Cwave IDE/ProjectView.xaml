@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="Cwave_IDE.ProjectView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cwave_IDE"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:editor="using:WinUIEditor"
+    mc:Ignorable="d"
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+
+    <Grid Padding="90">
+        <StackPanel Orientation="Vertical">
+            <TextBlock FontSize="44">Projects</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Grid Padding="50">
+                    <StackPanel>
+                        <TextBlock FontSize="24">Recent Projects</TextBlock>
+                        <ListView>
+                            <ListViewItem>Test Project 0</ListViewItem>
+                           <ListViewItem>Test Project 1</ListViewItem>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+                <Grid Padding="50" HorizontalAlignment="Right">
+                    <StackPanel HorizontalAlignment="Right">
+                        <TextBlock FontSize="24"><Run Text="New Project"/></TextBlock>
+                        <ListView SelectionMode="None" IsItemClickEnabled="True">
+                            <ListViewItem Content="DS"/>
+                            <ListViewItem Content="Wii"/>
+                            <ListViewItem Content="PC/Windows"/>
+                            <ListViewItem Content="PC/Linux"/>
+                            <ListViewItem Content="MacOS"/>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            <StackPanel Padding="60" Spacing="15" Orientation="Horizontal">
+                <muxc:SplitButton>
+                    Import a project
+                    <muxc:SplitButton.Flyout>
+                        <Flyout Placement="Bottom">
+                            <StackPanel Orientation="Vertical">
+                                <MenuFlyoutItem>Import from ZIP</MenuFlyoutItem>
+                                <MenuFlyoutItem>Import from folder</MenuFlyoutItem>
+                                <MenuFlyoutItem>Import with .waveide file</MenuFlyoutItem>
+                            </StackPanel>
+                        </Flyout>
+                    </muxc:SplitButton.Flyout>
+                </muxc:SplitButton>
+                <Button Click="Button_Click">Start with No Code</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
